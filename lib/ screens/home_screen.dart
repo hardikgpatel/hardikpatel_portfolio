@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hardikpatel/%20screens/about_screen.dart';
+import 'package:hardikpatel/%20screens/contact_screen.dart';
+import 'package:hardikpatel/%20screens/info_screen.dart';
+import 'package:hardikpatel/%20screens/project_screen.dart';
 import 'package:hardikpatel/config/assets.dart';
 import 'package:hardikpatel/utils/style_guid.dart';
 import 'package:hardikpatel/widgets/theme_inherited_widget.dart';
@@ -18,9 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   static List<Widget> tabWidgets = <Widget>[
     AboutScreen(),
-    AboutScreen(),
-    AboutScreen(),
-    AboutScreen(),
+    InfoScreen(),
+    ProjectScreen(),
+    ContactScreen(),
   ];
 
   @override
@@ -38,18 +42,25 @@ class _HomeScreenState extends State<HomeScreen> {
         child: tabWidgets[_selectedTabIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
+        type: BottomNavigationBarType.fixed,
+        items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_outlined),
             title: Text('Me'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school_outlined),
-            title: Text('Education'),
+            icon: Icon(Icons.info_outline),
+            title: Text('Info'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.mobile_screen_share_outlined),
+            icon: Icon(Icons.screen_share_outlined),
             title: Text('Projects'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.contact_page_outlined),
+            title: Text('Contact'),
           ),
         ],
         currentIndex: _selectedTabIndex,

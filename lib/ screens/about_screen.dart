@@ -22,7 +22,7 @@ class AboutScreen extends StatelessWidget {
               ),
               Text(
                 'Hey! I am Hardik Patel',
-                textScaleFactor: 3,
+                textScaleFactor: 2.8,
                 textAlign: TextAlign.center,
               ),
               SizedBox(
