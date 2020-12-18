@@ -6,6 +6,7 @@ import 'package:hardikpatel/model/project_model.dart';
 class ProjectWidget extends StatelessWidget {
   final ProjectModel _project;
   final double _bottomPadding;
+
   ProjectWidget(this._project, this._bottomPadding);
 
   @override
@@ -19,16 +20,19 @@ class ProjectWidget extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Expanded(
-                  flex: 30,
+                flex: 30,
+                child: Center(
                   child: Image.network(
                     _project.image,
                     width: width * .25,
                     height: width * .25,
-                  )),
+                  ),
+                ),
+              ),
               Expanded(
                 flex: 3,
                 child: Container(),
@@ -37,8 +41,9 @@ class ProjectWidget extends StatelessWidget {
                 flex: 70,
                 child: Container(
                   padding: EdgeInsets.only(top: 8.0),
-                  child: Wrap(
-                    direction: Axis.horizontal,
+                  child: Column(
+                    //direction: Axis.horizontal,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
                         _project.name,
@@ -66,6 +71,7 @@ class ProjectWidget extends StatelessWidget {
   }
 
   void onProjectClick() {
-    if (_project.link != null) html.window.open(_project.link, 'Hardik Patel');
+    if (_project.link != null && _project.link.isNotEmpty)
+      html.window.open(_project.link, 'Hardik Patel');
   }
 }

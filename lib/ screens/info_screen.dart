@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:hardikpatel/model/education_model.dart';
 import 'package:hardikpatel/model/experience_model.dart';
 import 'package:hardikpatel/widgets/responsive_widget.dart';
 import 'package:hardikpatel/widgets/theme_inherited_widget.dart';
@@ -39,22 +38,22 @@ class _InfoScreenState extends State<InfoScreen> {
     ExperienceModel(
       companyName: 'BCA',
       description: 'Veer Narmad South Gujarat University',
-      startDate: DateTime(2012, 08, 1),
+      startDate: DateTime(2012, 07, 15),
       endDate: DateTime(2015, 05, 1),
       marks: '70',
     ),
     ExperienceModel(
       companyName: 'HSC',
       description: 'Gujarat Secondary and Higher Secondary Education Board',
-      startDate: DateTime(2015, 08, 1),
-      endDate: DateTime(2018, 05, 1),
+      startDate: DateTime(2010, 08, 1),
+      endDate: DateTime(2012, 03, 20),
       marks: '57',
     ),
     ExperienceModel(
       companyName: 'SSC',
       description: 'Gujarat Secondary and Higher Secondary Education Board',
       startDate: DateTime(2015, 08, 1),
-      endDate: DateTime(2018, 05, 1),
+      endDate: DateTime(2010, 03, 28),
       marks: '68',
     ),
   ];
@@ -144,6 +143,7 @@ class _InfoScreenState extends State<InfoScreen> {
                   ),
                   SizedBox(height: 5,),
                   Text(
+                    experienceModel.marks!=null ? '${DateFormat('yyyy/MM/dd').format(experienceModel.endDate)}' :
                     '${DateFormat('yyyy/MM/dd').format(experienceModel.startDate)} - ${experienceModel.endDate != null ? DateFormat('yyyy/MM/dd').format(experienceModel.endDate) : 'Present'}',
                   ),
                 ],
