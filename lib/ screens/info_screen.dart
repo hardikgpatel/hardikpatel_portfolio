@@ -126,7 +126,7 @@ class _InfoScreenState extends State<InfoScreen> {
     return Stack(
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 60.0),
+          padding: EdgeInsets.only(left: 60.0, bottom: 20),
           child: Card(
             child: Padding(
               padding: EdgeInsets.all(10.0),
@@ -137,10 +137,12 @@ class _InfoScreenState extends State<InfoScreen> {
                     experienceModel.companyName,
                     textScaleFactor: 2,
                   ),
+                  SizedBox(height: 5,),
                   Text(
                     experienceModel.description,
                     textScaleFactor: 1.3,
                   ),
+                  SizedBox(height: 5,),
                   Text(
                     '${DateFormat('yyyy/MM/dd').format(experienceModel.startDate)} - ${experienceModel.endDate != null ? DateFormat('yyyy/MM/dd').format(experienceModel.endDate) : 'Present'}',
                   ),

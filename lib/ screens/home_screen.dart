@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hardikpatel/%20screens/about_screen.dart';
 import 'package:hardikpatel/%20screens/contact_screen.dart';
 import 'package:hardikpatel/%20screens/info_screen.dart';
 import 'package:hardikpatel/%20screens/project_screen.dart';
 import 'package:hardikpatel/config/assets.dart';
-import 'package:hardikpatel/utils/style_guid.dart';
 import 'package:hardikpatel/widgets/theme_inherited_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -58,10 +54,10 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.screen_share_outlined),
             title: Text('Projects'),
           ),
-          BottomNavigationBarItem(
+          /*BottomNavigationBarItem(
             icon: Icon(Icons.contact_page_outlined),
             title: Text('Contact'),
-          ),
+          ),*/
         ],
         currentIndex: _selectedTabIndex,
         onTap: (index)=> setState(() => _selectedTabIndex = index),
