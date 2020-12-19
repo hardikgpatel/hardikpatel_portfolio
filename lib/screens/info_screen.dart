@@ -139,12 +139,14 @@ class _InfoScreenState extends State<InfoScreen> {
                   SizedBox(height: 5,),
                   Text(
                     experienceModel.description,
-                    textScaleFactor: 1.3,
+                    textScaleFactor: 1.5,
+                    style: Theme.of(context).textTheme.caption,
                   ),
                   SizedBox(height: 5,),
                   Text(
                     experienceModel.marks!=null ? '${DateFormat('yyyy/MM/dd').format(experienceModel.endDate)}' :
                     '${DateFormat('yyyy/MM/dd').format(experienceModel.startDate)} - ${experienceModel.endDate != null ? DateFormat('yyyy/MM/dd').format(experienceModel.endDate) : 'Present'}',
+                    style: Theme.of(context).textTheme.caption,
                   ),
                 ],
               ),

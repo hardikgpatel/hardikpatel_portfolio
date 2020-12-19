@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hardikpatel/%20screens/home_screen.dart';
+import 'package:hardikpatel/screens/home_screen.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {

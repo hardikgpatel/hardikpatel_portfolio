@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hardikpatel/%20screens/about_screen.dart';
-import 'package:hardikpatel/%20screens/contact_screen.dart';
-import 'package:hardikpatel/%20screens/info_screen.dart';
-import 'package:hardikpatel/%20screens/project_screen.dart';
+import 'package:hardikpatel/screens/about_screen.dart';
+import 'package:hardikpatel/screens/contact_screen.dart';
+import 'package:hardikpatel/screens/info_screen.dart';
+import 'package:hardikpatel/screens/project_screen.dart';
 import 'package:hardikpatel/config/assets.dart';
 import 'package:hardikpatel/widgets/theme_inherited_widget.dart';
 
@@ -20,7 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
     AboutScreen(),
     InfoScreen(),
     ProjectScreen(),
-    ContactScreen(),
   ];
 
   @override
@@ -54,10 +53,6 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.screen_share_outlined),
             title: Text('Projects'),
           ),
-          /*BottomNavigationBarItem(
-            icon: Icon(Icons.contact_page_outlined),
-            title: Text('Contact'),
-          ),*/
         ],
         currentIndex: _selectedTabIndex,
         onTap: (index)=> setState(() => _selectedTabIndex = index),
