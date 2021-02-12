@@ -26,7 +26,6 @@ dependencies:
   google_fonts: ^1.1.1
   flutter_screenutil: ^3.0.2
   http: ^0.12.2
-  pdf_flutter: any
 
 
   # The following adds the Cupertino Icons font to your application.

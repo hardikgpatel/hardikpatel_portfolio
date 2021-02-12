@@ -14,10 +14,16 @@ class InfoScreen extends StatefulWidget {
 class _InfoScreenState extends State<InfoScreen> {
   List<ExperienceModel> _exp = [
     ExperienceModel(
+      companyName: 'AtliQ Technologies',
+      description: 'I am working as Software Developer',
+      startDate: DateTime(2021, 2, 11),
+      endDate: null,
+    ),
+    ExperienceModel(
       companyName: 'Suvya Web',
       description: 'I have worked as Mobile App Developer and team lead',
       startDate: DateTime(2018, 12, 14),
-      endDate: null,
+      endDate: DateTime(2021, 1, 31),
     ),
     ExperienceModel(
       companyName: 'LaNet Team Software Solutions PTV. LTD.',
@@ -118,7 +124,10 @@ class _InfoScreenState extends State<InfoScreen> {
 
   _getDiff(DateTime start, DateTime end) {
     final difference = (end.difference(start).inDays / 365).toStringAsFixed(1);
-    return difference;
+    if(double.parse(difference) > 0) {
+      return difference;
+    }
+    return '-';
   }
 
   Widget experienceItem(ExperienceModel experienceModel) {
