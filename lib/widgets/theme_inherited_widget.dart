@@ -13,8 +13,7 @@ class ThemeSwitcher extends InheritedWidget {
 
   static _ThemeSwitcherWidgetState of(BuildContext context) {
     //This method returns the current state of the ThemeSwitcherWidget. This will be used down the tree
-    return (context.inheritFromWidgetOfExactType(ThemeSwitcher)
-            as ThemeSwitcher)
+    return (context.dependOnInheritedWidgetOfExactType<ThemeSwitcher>())
         .data;
   }
 
@@ -39,7 +38,7 @@ class ThemeSwitcherWidget extends StatefulWidget {
 }
 
 class _ThemeSwitcherWidgetState extends State<ThemeSwitcherWidget> {
-  bool isDarkModeOn;
+  bool isDarkModeOn = true;
 
   void switchDarkMode() {
     //method used to toggle dark mode during the runtime of the app

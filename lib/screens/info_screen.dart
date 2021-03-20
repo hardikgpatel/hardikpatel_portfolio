@@ -91,34 +91,36 @@ class _InfoScreenState extends State<InfoScreen> {
   }
 
   Widget content() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Text(
-          'Experience (Years)',
-          textScaleFactor: 3,
-        ),
-        ListView.builder(
-          itemCount: _exp.length,
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) => experienceItem(_exp[index]),
-        ),
-        SizedBox(
-          height: 40,
-        ),
-        Text(
-          'Education',
-          textScaleFactor: 3,
-        ),
-        ListView.builder(
-          itemCount: _edu.length,
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) => experienceItem(_edu[index]),
-        ),
-      ],
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            'Experience (Years)',
+            textScaleFactor: 3,
+          ),
+          ListView.builder(
+            itemCount: _exp.length,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) => experienceItem(_exp[index]),
+          ),
+          SizedBox(
+            height: 40,
+          ),
+          Text(
+            'Education',
+            textScaleFactor: 3,
+          ),
+          ListView.builder(
+            itemCount: _edu.length,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) => experienceItem(_edu[index]),
+          ),
+        ],
+      ),
     );
   }
 

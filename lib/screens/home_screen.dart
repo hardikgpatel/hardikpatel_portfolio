@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hardikpatel/screens/about_screen.dart';
-import 'package:hardikpatel/screens/contact_screen.dart';
 import 'package:hardikpatel/screens/info_screen.dart';
 import 'package:hardikpatel/screens/project_screen.dart';
 import 'package:hardikpatel/config/assets.dart';
@@ -25,16 +24,28 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            icon: ThemeSwitcher.of(context).isDarkModeOn?Icon(Icons.wb_sunny):Image.asset(Assets.moon,height: 20,width: 20,),
-            onPressed: ()=> ThemeSwitcher.of(context).switchDarkMode(),
+      body: Stack(
+        children: [
+          // Stars(),
+          Center(
+            child: tabWidgets[_selectedTabIndex],
+          ),
+          Positioned(
+            top: 10,
+            right: 10,
+            child: IconButton(
+              icon: ThemeSwitcher.of(context).isDarkModeOn
+                  ? Icon(Icons.wb_sunny)
+                  : Image.asset(
+                      Assets.moon,
+                      height: 20,
+                      width: 20,
+                      color: Colors.white,
+                    ),
+              onPressed: () => ThemeSwitcher.of(context).switchDarkMode(),
+            ),
           )
         ],
-      ),
-      body: Center(
-        child: tabWidgets[_selectedTabIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         unselectedItemColor: Colors.grey,
@@ -43,19 +54,17 @@ class _HomeScreenState extends State<HomeScreen> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_outlined),
-            title: Text('Me'),
+            label: 'Me',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.info_outline),
-            title: Text('Info'),
+            label: 'Info',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.screen_share_outlined),
-            title: Text('Projects'),
-          ),
+              icon: Icon(Icons.screen_share_outlined), label: 'Projects'),
         ],
         currentIndex: _selectedTabIndex,
-        onTap: (index)=> setState(() => _selectedTabIndex = index),
+        onTap: (index) => setState(() => _selectedTabIndex = index),
         selectedItemColor: Theme.of(context).accentColor,
       ),
     );
