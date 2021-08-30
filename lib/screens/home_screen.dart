@@ -40,7 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       Assets.moon,
                       height: 20,
                       width: 20,
-                      color: Colors.white,
                     ),
               onPressed: () => ThemeSwitcher.of(context).switchDarkMode(),
             ),

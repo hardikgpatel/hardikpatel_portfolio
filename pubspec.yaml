@@ -30,6 +30,7 @@ dependencies:
   simple_animations: ^3.0.3
   pedantic: ^1.11.0
   intl: ^0.17.0
+  flutter_neumorphic: ^3.1.0
 
 dev_dependencies:
   flutter_test:
