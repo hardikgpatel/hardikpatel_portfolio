@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:supercharged/supercharged.dart';
 
 class ParticlesPainter extends CustomPainter {
-  final double value;
+  final double? value;
 
   ParticlesPainter({this.value});
 
@@ -14,7 +14,7 @@ class ParticlesPainter extends CustomPainter {
 
     200.times(() {
       var start = random.nextDouble();
-      var p = (start + value) % 1.0;
+      var p = (start + value!) % 1.0;
 
       var target = random.nextBool()
           ? Offset(

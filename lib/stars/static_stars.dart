@@ -18,14 +18,14 @@ class StaticStars extends StatelessWidget {
 }
 
 class _Painter extends CustomPainter {
-  final int n;
+  final int? n;
 
   _Painter({this.n});
 
   @override
   void paint(Canvas canvas, Size size) {
     var random = Random(1);
-    n.times(() {
+    n!.times(() {
       var position = Offset(
         random.nextDouble() * size.width,
         random.nextDouble() * size.height,

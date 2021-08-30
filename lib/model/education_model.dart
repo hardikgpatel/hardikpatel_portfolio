@@ -1,9 +1,9 @@
 class EducationModel {
-  String degree;
-  String university;
-  String marks;
-  DateTime startDate;
-  DateTime endDate;
+  String? degree;
+  String? university;
+  String? marks;
+  DateTime? startDate;
+  DateTime? endDate;
 
   EducationModel({
     this.degree,

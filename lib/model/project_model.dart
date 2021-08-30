@@ -1,8 +1,8 @@
 class ProjectModel {
-  String name;
-  String image;
-  String description;
-  String link;
+  String? name;
+  String? image;
+  String? description;
+  String? link;
 
   ProjectModel({
     this.description,

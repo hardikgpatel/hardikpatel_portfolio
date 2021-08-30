@@ -1,9 +1,9 @@
 class ExperienceModel {
-  String companyName;
-  String description;
-  DateTime startDate;
-  DateTime endDate;
-  String marks;
+  String? companyName;
+  String? description;
+  DateTime? startDate;
+  DateTime? endDate;
+  String? marks;
 
   ExperienceModel({
     this.companyName,

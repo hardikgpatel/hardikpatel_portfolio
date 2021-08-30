@@ -28,7 +28,7 @@ class ProjectWidget extends StatelessWidget {
                 flex: 30,
                 child: Center(
                   child: Image.network(
-                    _project.image,
+                    _project.image!,
                     width: width * .25,
                     height: width * .25,
                   ),
@@ -47,14 +47,14 @@ class ProjectWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        _project.name,
+                        _project.name!,
                         style: Theme.of(context).textTheme.headline6,
                       ),
                       SizedBox(
                         height: height * .01,
                       ),
                       Text(
-                        _project.description,
+                        _project.description!,
                         textScaleFactor: 1.2,
                         style: Theme.of(context).textTheme.caption,
                         maxLines: 5,
@@ -72,7 +72,7 @@ class ProjectWidget extends StatelessWidget {
   }
 
   void onProjectClick() {
-    if (_project.link != null && _project.link.isNotEmpty)
-      html.window.open(_project.link, 'Hardik Patel');
+    if (_project.link != null && _project.link!.isNotEmpty)
+      html.window.open(_project.link!, 'Hardik Patel');
   }
 }
