@@ -13,8 +13,7 @@ class ThemeSwitcher extends InheritedWidget {
 
   static _ThemeSwitcherWidgetState of(BuildContext context) {
     //This method returns the current state of the ThemeSwitcherWidget. This will be used down the tree
-    return context.dependOnInheritedWidgetOfExactType<ThemeSwitcher>()!
-        .data;
+    return context.dependOnInheritedWidgetOfExactType<ThemeSwitcher>()!.data;
   }
 
   @override
@@ -28,7 +27,8 @@ class ThemeSwitcherWidget extends StatefulWidget {
   final Widget
       child; // child to which this boolean variable should be propagated upon change. This will be our app in this case
 
-  ThemeSwitcherWidget({Key? key, required this.initialDarkModeOn, required this.child})
+  ThemeSwitcherWidget(
+      {Key? key, required this.initialDarkModeOn, required this.child})
       : assert(initialDarkModeOn != null),
         assert(child != null),
         super(key: key);
@@ -49,9 +49,9 @@ class _ThemeSwitcherWidgetState extends State<ThemeSwitcherWidget> {
 
   @override
   Widget build(BuildContext context) {
-    isDarkModeOn = isDarkModeOn ??
+    isDarkModeOn = isDarkModeOn ||
         widget
-            .initialDarkModeOn; // this is the build method which would build the widget tree with the above info
+            .initialDarkModeOn;
     return ThemeSwitcher(
       data: this,
       child: widget.child,

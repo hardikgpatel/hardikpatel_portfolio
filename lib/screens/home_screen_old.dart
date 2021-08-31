@@ -5,14 +5,14 @@ import 'package:hardikpatel/screens/project_screen.dart';
 import 'package:hardikpatel/config/assets.dart';
 import 'package:hardikpatel/widgets/theme_inherited_widget.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreenOld extends StatefulWidget {
   static const routeName = '/';
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeScreenOldState createState() => _HomeScreenOldState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenOldState extends State<HomeScreenOld> {
   int _selectedTabIndex = 0;
 
   static List<Widget> tabWidgets = <Widget>[

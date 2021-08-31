@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:hardikpatel/screens/home_screen.dart';
+import 'package:hardikpatel/screens/home/home_screen.dart';
+import 'package:hardikpatel/screens/home_screen_old.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case HomeScreenOld.routeName:
+        return MaterialPageRoute(
+          builder: (context) {
+            return HomeScreenOld();
+          },
+        );
       case HomeScreen.routeName:
         return MaterialPageRoute(
           builder: (context) {
             return HomeScreen();
           },
         );
-        break;
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
