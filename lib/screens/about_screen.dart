@@ -54,7 +54,7 @@ class AboutScreen extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'I\'m a Mobile Developer with Skills of Android, Flutter, React-Native.\nLike Photography & Traveling',
+                'I\'m a Mobile Developer with Skills of React-Native, Flutter, and Android.\nLike Photography & Traveling',
                 textScaleFactor: 1.5,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.caption,
@@ -131,8 +131,9 @@ class AboutScreen extends StatelessWidget {
   Widget getEmail(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        html.window
-            .open('mailto:hardikghanshyampatel@gmail.com,hardikpatel0884@gmail.com', 'Email');
+        html.window.open(
+            'mailto:hardikghanshyampatel@gmail.com,hardikpatel0884@gmail.com',
+            'Email');
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -148,7 +149,7 @@ class AboutScreen extends StatelessWidget {
             'hardikghanshyampatel@gmail.com',
             textScaleFactor: 1.5,
             textAlign: TextAlign.center,
-            style: TextStyle( fontSize: 12),
+            style: TextStyle(fontSize: 12),
           ),
         ],
       ),
@@ -174,7 +175,7 @@ class AboutScreen extends StatelessWidget {
             '823-873-0884',
             textScaleFactor: 1.5,
             textAlign: TextAlign.center,
-            style: TextStyle( fontSize: 12),
+            style: TextStyle(fontSize: 12),
           ),
         ],
       ),
